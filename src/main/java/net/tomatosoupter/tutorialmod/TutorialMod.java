@@ -1,5 +1,7 @@
 package net.tomatosoupter.tutorialmod;
 
+import net.tomatosoupter.tutorialmod.item.ModItems;
+import net.tomatosoupter.tutorialmod.mod_tab.ModCreativeTabRegistry;
 import org.slf4j.Logger;
 import net.minecraft.world.item.ItemStack;
 import com.mojang.logging.LogUtils;
@@ -35,6 +37,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static net.minecraft.world.item.ItemStack.*;
+import static net.tomatosoupter.tutorialmod.item.ModItems.*;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(TutorialMod.MOD_ID)
@@ -46,36 +49,31 @@ public class TutorialMod {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public TutorialMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
+        ModCreativeTabRegistry.CREATIVE_MOD_TABS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        ModItems.register(modEventBus);
 
         // Register the item to a creative tab
-    //    modEventBus.addListener(this::addCreative);
-
+        // modEventBus.addListener(this::addCreative)
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
-
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-
-    }
+    public void onServerStarting(ServerStartingEvent event) {}
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
+        public static void onClientSetup(FMLClientSetupEvent event) {}
     }
 }

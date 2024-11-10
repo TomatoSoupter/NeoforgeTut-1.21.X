@@ -1,5 +1,10 @@
 {
   "item.tutorial_mod.testitem": "Test Item",
 
-  "tab.tutorial_mod.test": "Test Tab"
+  "block.tutorial_mod.daub": "Daub",
+  "block.tutorial_mod.daub_stairs": "Daub Stairs",
+  "block.tutorial_mod.daub_slab": "Daub Slab",
+
+  "tab.tutorial_mod.items": "Test Item Tab",
+  "tab.tutorial_mod.blocks": "Test Block Tab"
 }

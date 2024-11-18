@@ -8,7 +8,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.tomatosoupter.tutorialmod.TutorialMod;
-import net.tomatosoupter.tutorialmod.item.ModItems;
+import net.tomatosoupter.tutorialmod.registry.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

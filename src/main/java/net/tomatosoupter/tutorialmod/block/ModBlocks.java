@@ -1,6 +1,5 @@
 package net.tomatosoupter.tutorialmod.block;
 
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -9,7 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.tomatosoupter.tutorialmod.TutorialMod;
-import net.tomatosoupter.tutorialmod.item.ModItems;
+import net.tomatosoupter.tutorialmod.registry.ModItems;
 
 import java.util.function.Supplier;
 

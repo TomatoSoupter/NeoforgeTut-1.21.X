@@ -9,7 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.tomatosoupter.tutorialmod.TutorialMod;
 import net.tomatosoupter.tutorialmod.block.ModBlocks;
-import net.tomatosoupter.tutorialmod.item.ModItems;
+import net.tomatosoupter.tutorialmod.registry.ModItems;
 
 import java.util.function.Supplier;
 

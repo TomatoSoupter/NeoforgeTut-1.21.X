@@ -1,11 +1,13 @@
-package net.tomatosoupter.tutorialmod.weaponTiers;
+package net.tomatosoupter.tutorialmod.item.weaponTiers;
 
+import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 
-public class tutorialModWeaponTiers implements Tier, IronsWeaponTiers{
+public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
 
     @Override
     public int getUses() {
@@ -15,6 +17,11 @@ public class tutorialModWeaponTiers implements Tier, IronsWeaponTiers{
     @Override
     public float getSpeed() {
         return 0;
+    }
+
+    @Override
+    public AttributeContainer[] getAdditionalAttributes() {
+        return new AttributeContainer[0];
     }
 
     @Override

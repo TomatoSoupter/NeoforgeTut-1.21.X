@@ -1,9 +1,12 @@
 {
   "item.tutorial_mod.testitem": "Test Item",
+  "item.tutorial_mod.dagger": "Dagger",
+  "item.tutorial_mod.viscera_spear": "Viscera Spear",
 
-  "block.tutorial_mod.daub": "Daub",
+  "block.tutorial_mod.daub_block": "Daub",
   "block.tutorial_mod.daub_stairs": "Daub Stairs",
   "block.tutorial_mod.daub_slab": "Daub Slab",
+  "block.tutorial_mod.daub_wall": "Daub Wall",
 
   "tab.tutorial_mod.items": "Test Item Tab",
   "tab.tutorial_mod.blocks": "Test Block Tab"

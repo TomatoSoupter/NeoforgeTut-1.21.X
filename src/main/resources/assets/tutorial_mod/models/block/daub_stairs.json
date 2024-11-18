@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "tutorial_mod:block/daub",
-    "side": "tutorial_mod:block/daub",
-    "top": "tutorial_mod:block/daub"
-  }
-}

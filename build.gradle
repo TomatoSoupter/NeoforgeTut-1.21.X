@@ -140,6 +140,13 @@ configurations {
 }
 
 dependencies {
+    implementation "curse.maven:better-combat-by-daedelus-639842:5723092"
+    implementation "curse.maven:playeranimator-658587:5698755"
+    implementation "curse.maven:cloth-config-348521:5729127"
+    implementation "curse.maven:irons-spells-n-spellbooks-855414:5863590"
+    implementation "curse.maven:geckolib-388172:5605715"
+    implementation "curse.maven:adorned-1036809:5740650"
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

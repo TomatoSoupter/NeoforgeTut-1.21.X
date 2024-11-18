@@ -1,0 +1,29 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "tutorial_mod:item/large_weapon_template",
+    "textures": {
+      "layer0": "tutorial_mod:item/viscera_spear"
+    }
+  },
+  "perspectives": {
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "tutorial_mod:item/viscera_spear_gui"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "tutorial_mod:item/viscera_spear_gui"
+      }
+    },
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "tutorial_mod:item/viscera_spear_gui"
+      }
+    }
+  }
+}

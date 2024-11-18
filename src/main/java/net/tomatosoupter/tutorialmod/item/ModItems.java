@@ -1,12 +1,17 @@
 package net.tomatosoupter.tutorialmod.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.tomatosoupter.tutorialmod.TutorialMod;
+
+import javax.swing.*;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TutorialMod.MOD_ID);
@@ -16,6 +21,15 @@ public class ModItems {
        return new Item(new Item.Properties());
     });
 
+    //Daggers
+    public static final DeferredItem<SwordItem> DAGGER = ITEMS.register("dagger",
+            () -> new SwordItem(Tiers.IRON, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(Tiers.IRON, 1, -2f))));
+
+    //Viscera Spear
+    public static final DeferredItem<SwordItem> VISCERA_SPEAR = ITEMS.register("viscera_spear",
+            () -> new SwordItem(Tiers.DIAMOND, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(Tiers.DIAMOND, 4, -2.8f))));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

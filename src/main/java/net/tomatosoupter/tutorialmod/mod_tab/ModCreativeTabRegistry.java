@@ -22,6 +22,8 @@ public class ModCreativeTabRegistry {
                     .title(Component.translatable("tab.tutorial_mod.items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.TESTITEM.get());
+                        output.accept(ModItems.DAGGER.get());
+                        output.accept(ModItems.VISCERA_SPEAR.get());
                     }).build());
 
     public static final Supplier<CreativeModeTab> TEST_BLOCK_TAB = CREATIVE_MODE_TAB.register("test_block_tab",
@@ -32,6 +34,7 @@ public class ModCreativeTabRegistry {
                         output.accept(ModBlocks.DAUB_BLOCK.get());
                         output.accept(ModBlocks.DAUB_STAIRS.get());
                         output.accept(ModBlocks.DAUB_SLAB.get());
+                        output.accept(ModBlocks.DAUB_WALL.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

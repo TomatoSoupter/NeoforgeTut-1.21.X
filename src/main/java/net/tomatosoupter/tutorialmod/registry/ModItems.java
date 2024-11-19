@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.tomatosoupter.tutorialmod.TutorialMod;
+import net.tomatosoupter.tutorialmod.item.weaponTiers.TutorialModWeaponTiers;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TutorialMod.MOD_ID);
@@ -25,7 +26,8 @@ public class ModItems {
     //Viscera Spear
     public static final DeferredItem<SwordItem> VISCERA_SPEAR = ITEMS.register("viscera_spear",
             () -> new SwordItem(Tiers.DIAMOND, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(Tiers.DIAMOND, 4, -2.8f))));
+                    .attributes(SwordItem.createAttributes(TutorialModWeaponTiers.VISCERA_SPEAR, 0, -2.8f))));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

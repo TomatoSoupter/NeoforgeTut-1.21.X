@@ -16,7 +16,13 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
+
+
+
 public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
+
+    public static TutorialModWeaponTiers VISCERA_SPEAR = new TutorialModWeaponTiers (1600, 6.5F, -2.5F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(Items.NETHERITE_SCRAP),
+            new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     private final int uses;
     private final float speed;
@@ -26,7 +32,7 @@ public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
     private final LazyLoadedValue<Ingredient> repairIngredient;
     private final AttributeContainer[] attributeContainers;
 
-    public TutorialWeaponTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
+    public TutorialModWeaponTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
         this.uses = uses;
         this.speed = speed;
         this.damage = damage;
@@ -38,36 +44,36 @@ public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
 
     @Override
     public int getUses() {
-        return 0;
+        return uses;
     }
 
     @Override
     public float getSpeed() {
-        return 0;
+        return speed;
     }
 
     @Override
     public AttributeContainer[] getAdditionalAttributes() {
-        return new AttributeContainer[0];
+        return this.attributeContainers;
     }
 
     @Override
     public float getAttackDamageBonus() {
-        return 0;
+        return damage;
     }
 
     @Override
     public TagKey<Block> getIncorrectBlocksForDrops() {
-        return null;
+        return incorrectBlocksForDrops;
     }
 
     @Override
     public int getEnchantmentValue() {
-        return 0;
+        return enchantmentValue;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return repairIngredient.get();
     }
 }

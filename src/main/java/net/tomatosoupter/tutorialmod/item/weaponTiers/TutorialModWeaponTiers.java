@@ -17,19 +17,20 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 
-
-
 public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
 
     public static TutorialModWeaponTiers VISCERA_SPEAR = new TutorialModWeaponTiers (1600, 6.5F, -2.5F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(Items.NETHERITE_SCRAP),
             new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    /*public static TutorialModWeaponTiers DEEP_GREATSWORD = new TutorialModWeaponTiers(1680, 7, -3.0F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(ItemRegistry.MITHRIL_INGOT.get()),
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));*/
 
     private final int uses;
     private final float speed;
     private final float damage;
     private final int enchantmentValue;
     private final TagKey<Block> incorrectBlocksForDrops;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
     private final AttributeContainer[] attributeContainers;
 
     public TutorialModWeaponTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
@@ -38,7 +39,7 @@ public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
         this.damage = damage;
         this.enchantmentValue = enchantmentValue;
         this.incorrectBlocksForDrops = incorrectBlocksForDrops;
-        this.repairIngredient = new LazyLoadedValue<>(repairIngredient);
+        this.repairIngredient = repairIngredient;
         this.attributeContainers = attributes;
     }
 
@@ -74,6 +75,6 @@ public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return repairIngredient.get();
+        return (Ingredient)this.repairIngredient.get();
     }
 }

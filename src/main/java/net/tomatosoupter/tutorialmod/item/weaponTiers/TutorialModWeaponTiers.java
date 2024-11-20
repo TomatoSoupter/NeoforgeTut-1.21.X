@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 public class TutorialModWeaponTiers implements Tier, IronsWeaponTier {
 
-    public static TutorialModWeaponTiers VISCERA_SPEAR = new TutorialModWeaponTiers (1600, 6.5F, -2.5F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(Items.NETHERITE_SCRAP),
+    public static TutorialModWeaponTiers VISCERA_SPEAR = new TutorialModWeaponTiers (1600, 6.5F, -2.8F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(Items.NETHERITE_SCRAP),
             new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     /*public static TutorialModWeaponTiers DEEP_GREATSWORD = new TutorialModWeaponTiers(1680, 7, -3.0F, 10, BlockTags.INCORRECT_FOR_NETHERITE_TOOL, () -> Ingredient.of(ItemRegistry.MITHRIL_INGOT.get()),

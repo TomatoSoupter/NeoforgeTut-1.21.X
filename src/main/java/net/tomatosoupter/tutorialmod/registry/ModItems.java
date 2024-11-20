@@ -25,7 +25,7 @@ public class ModItems {
 
     //Viscera Spear
     public static final DeferredItem<SwordItem> VISCERA_SPEAR = ITEMS.register("viscera_spear",
-            () -> new SwordItem(Tiers.DIAMOND, new Item.Properties()
+            () -> new SwordItem(TutorialModWeaponTiers.VISCERA_SPEAR, new Item.Properties()
                     .attributes(SwordItem.createAttributes(TutorialModWeaponTiers.VISCERA_SPEAR, 0, -2.8f))));
 
     public static void register(IEventBus eventBus) {
